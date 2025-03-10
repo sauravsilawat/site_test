@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nini&#39;s Kitchen | Fine Dining</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      color: #333;
+      background: #fff;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", Times, serif;
+    }
+    /* Hero Section */
+    #hero {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: url('https://images.pexels.com/photos/30860046/pexels-photo-30860046.jpeg?cs=srgb&dl=pexels-1173285862-30860046.jpg&fm=jpg') no-repeat center center;
+      background-size: cover;
+      color: #fff;
+      padding: 100px 20px;
+    }
+    #hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      /* semi-transparent overlay for readability */
+    }
+    #hero .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    #hero h1 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
+    }
+    #hero p {
+      font-size: 1.2em;
+      margin-bottom: 1em;
+    }
+    #hero a.button {
+      display: inline-block;
+      padding: 0.75em 1.5em;
+      font-size: 1em;
+      text-decoration: none;
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 5px;
+      transition: background 0.3s, color 0.3s;
+    }
+    #hero a.button:hover {
+      background: #fff;
+      color: #000;
+    }
+    /* General Sections */
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    section h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 0.2em;
+      color: #333;
+    }
+    .section-divider {
+      width: 50px;
+      height: 3px;
+      background: #ccc;
+      margin: 0.5em auto 1.5em auto;
+      border: none;
+    }
+    /* Menu Preview Section */
+    #menu .menu-items {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .menu-item {
+      flex: 1 1 30%;
+      text-align: center;
+      margin: 20px 10px;
+    }
+    .menu-item img {
+      max-width: 100%;
+      border-radius: 5px;
+      height: 200px;
+      object-fit: cover;
+    }
+    .menu-item h3 {
+      margin: 0.5em 0 0.2em;
+      font-size: 1.2em;
+      color: #111;
+    }
+    .menu-item p {
+      font-size: 0.95em;
+      color: #555;
+      margin: 0;
+    }
+    /* About Section */
+    #about p {
+      font-size: 1em;
+      line-height: 1.6em;
+      max-width: 800px;
+      margin: 0.5em auto 0;
+      text-align: center;
+    }
+    /* Testimonials Section */
+    #testimonials .testimonial-list {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .testimonial {
+      flex: 1 1 30%;
+      margin: 20px 10px;
+      font-style: italic;
+      color: #555;
+      text-align: center;
+    }
+    .testimonial p {
+      margin-bottom: 0.5em;
+    }
+    .testimonial .author {
+      display: block;
+      font-style: normal;
+      font-weight: bold;
+      color: #333;
+    }
+    /* Contact Section */
+    #contact .contact-info {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    #contact .contact-info p {
+      margin: 0.2em 0;
+      font-size: 1em;
+    }
+    #contact .contact-info a {
+      color: #333;
+      text-decoration: none;
+    }
+    #contact .contact-info a:hover {
+      text-decoration: underline;
+    }
+    #contact form {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    #contact form .form-field {
+      margin-bottom: 1em;
+    }
+    #contact form label {
+      display: block;
+      margin-bottom: 0.3em;
+      font-weight: bold;
+    }
+    #contact form input,
+    #contact form textarea {
+      width: 100%;
+      padding: 0.5em;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-family: Georgia, "Times New Roman", Times, serif;
+    }
+    #contact form textarea {
+      height: 100px;
+      resize: vertical;
+    }
+    #contact form button {
+      display: inline-block;
+      padding: 0.6em 1.5em;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      background: #333;
+      color: #fff;
+      cursor: pointer;
+    }
+    #contact form button:hover {
+      background: #555;
+    }
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      #hero {
+        padding: 80px 20px;
+      }
+      #hero h1 {
+        font-size: 2.2em;
+      }
+      #hero p {
+        font-size: 1em;
+      }
+      #menu .menu-items,
+      #testimonials .testimonial-list {
+        flex-direction: column;
+        align-items: center;
+      }
+      .menu-item,
+      .testimonial {
+        flex: 1 1 100%;
+        margin: 20px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1>Nini&#39;s Kitchen</h1>
+      <p>Fine Dining &amp; Exceptional Cuisine</p>
+      <a href="#menu" class="button">Explore Our Menu</a>
+    </div>
+  </section>
+
+  <!-- Menu Preview Section -->
+  <section id="menu">
+    <h2>Menu Preview</h2>
+    <hr class="section-divider" />
+    <div class="menu-items">
+      <div class="menu-item">
+        <img src="https://images.pexels.com/photos/29220390/pexels-photo-29220390.jpeg?cs=srgb&dl=pexels-jona-scheuber-1283906658-29220390.jpg&fm=jpg" alt="Chef's Tasting Platter" />
+        <h3>Chef&#39;s Tasting Platter</h3>
+        <p>An artful selection of seasonal bites, from seared tuna to handcrafted sausage, garnished with edible flowers.</p>
+      </div>
+      <div class="menu-item">
+        <img src="https://images.pexels.com/photos/11217817/pexels-photo-11217817.jpeg?cs=srgb&dl=pexels-valeriya-kobzar-42371713-11217817.jpg&fm=jpg" alt="Pan-Seared Sea Bass" />
+        <h3>Pan-Seared Sea Bass</h3>
+        <p>Golden sea bass fillet served with roasted cherry tomatoes and a silky saffron butter sauce.</p>
+      </div>
+      <div class="menu-item">
+        <img src="https://images.pexels.com/photos/6213714/pexels-photo-6213714.jpeg?cs=srgb&dl=pexels-vovkapanda-6213714.jpg&fm=jpg" alt="Seared Scallops" />
+        <h3>Seared Scallops</h3>
+        <p>Caramelized scallops on a pea pur&eacute;e, accented with citrus pearls and a balsamic drizzle.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about">
+    <h2>About Us</h2>
+    <hr class="section-divider" />
+    <p>Welcome to Nini&#39;s Kitchen, where culinary artistry meets a warm, inviting atmosphere. Our fine dining restaurant is built on a passion for exquisite flavors and a dedication to impeccable service.</p>
+    <p>From the moment you step inside, you&#39;ll be enveloped in an ambiance of sophistication and comfort, perfect for intimate dinners and celebrations alike. Join us and experience a dining journey that delights the senses and nourishes the soul.</p>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <hr class="section-divider" />
+    <div class="testimonial-list">
+      <div class="testimonial">
+        <p>&ldquo;Every dish was a masterpiece. The ambiance and service made our anniversary truly special.&rdquo;</p>
+        <span class="author">&mdash; Jane D.</span>
+      </div>
+      <div class="testimonial">
+        <p>&ldquo;Absolutely the best dining experience I&#39;ve ever had. Exceptional food and warm hospitality!&rdquo;</p>
+        <span class="author">&mdash; John S.</span>
+      </div>
+      <div class="testimonial">
+        <p>&ldquo;From appetizers to dessert, each bite was heavenly. Nini&#39;s Kitchen exceeded all expectations.&rdquo;</p>
+        <span class="author">&mdash; Mary L.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <hr class="section-divider" />
+    <div class="contact-info">
+      <p><strong>Address:</strong> 123 Fine Dining Avenue, Gourmet City, GC 45678</p>
+      <p><strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+      <p><strong>Email:</strong> <a href="mailto:contact@niniskitchen.com">contact@niniskitchen.com</a></p>
+    </div>
+    <form name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact" />
+      <div class="form-field">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="form-field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+</body>
+</html>
